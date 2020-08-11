@@ -1,8 +1,8 @@
 Rails.application.configure do
 
   # Whitelist one hostname
-  config.hosts << "api.task-manager.test"
-  # or config.hosts.clear
+  # config.hosts << "api.taskmanager.test" or
+  config.hosts.clear
   
   # Settings specified here will take precedence over those in config/application.rb.
 
