@@ -9,7 +9,7 @@ RSpec.describe 'Sessions API', type: :request do
 
 	describe 'POST /sessions' do
 		before do
-			post "/sessions", params: {session: credentials }.to_json, headers: headers
+			post "/sessions", headers: headers, params: {session: credentials }.to_json
 		end
 
 		context 'when the credentials are correct' do
@@ -39,7 +39,22 @@ RSpec.describe 'Sessions API', type: :request do
 
 	end
 
-	describe 'DELETE /sessions' 
+	describe 'DELETE /sessions/:id' do
+		let(:auth_token){ user.auth_token }
+
+		before do
+			delete "/sessions/#{auth_token}", headers: headers, params:{}
+		end
+
+		it 'return status code 204' do
+			expect(response).to have_http_status(204)
+		end
+
+		it 'return status code 204' do
+			expect(User.find_by(auth_token: auth_token)).to be_nil
+		end
+
+	end
 
 end
 
