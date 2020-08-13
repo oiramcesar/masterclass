@@ -1,0 +1,62 @@
+----------------*****************------------------
+
+Randomized with seed 13109
+
+Sessions API
+  POST /sessions
+    when the credentials are incorrect
+      returns the json data for the errors (FAILED - 1)
+      returns status code 401 (FAILED - 2)
+    when the credentials are correct
+      returns the json data for the users with auth token
+      returns status code 200
+
+Failures:
+
+  1) Sessions API POST /sessions when the credentials are incorrect returns the json data for the errors
+     Failure/Error: @json_body ||= JSON.parse(response.body, symbolize_names: true)
+
+     JSON::ParserError:
+       765: unexpected token at ''
+     # ./spec/support/request_spec_helper.rb:3:in `json_body'
+     # ./spec/requests/api/v1/sessions_spec.rb:36:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Sessions API POST /sessions when the credentials are incorrect returns status code 401
+     Failure/Error: expect(response).to have_http_status(401)
+       expected the response to have status code 401 but it was 204
+     # ./spec/requests/api/v1/sessions_spec.rb:32:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.22 seconds (files took 0.32737 seconds to load)
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/sessions_spec.rb:35 # Sessions API POST /sessions when the credentials are incorrect returns the json data for the errors
+rspec ./spec/requests/api/v1/sessions_spec.rb:31 # Sessions API POST /sessions when the credentials are incorrect returns status code 401
+
+Randomized with seed 13109
+
+----------------*****************------------------
+
+Randomized with seed 62927
+
+Sessions API
+  POST /sessions
+    when the credentials are correct
+      returns the json data for the users with auth token
+      returns status code 200
+    when the credentials are incorrect
+      returns status code 401
+      returns the json data for the errors
+
+Finished in 1.04 seconds (files took 0.29348 seconds to load)
+4 examples, 0 failures
+
+Randomized with seed 62927
+
