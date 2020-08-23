@@ -22,7 +22,7 @@ RSpec.describe 'Users API', type: :request do
                 expect(response).to have_http_status(200)
             end
         end
-        
+        1
         context 'when the user doesn\'t exists' do
             let(:user_id) { 1000 }
 

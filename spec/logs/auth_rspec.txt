@@ -1,0 +1,13 @@
+****************************
+
+Randomized with seed 32432
+
+ApplicationController
+  includes the correct concerns
+    is expected to include Authenticable
+
+Finished in 0.04915 seconds (files took 0.34076 seconds to load)
+1 example, 0 failures
+
+Randomized with seed 32432
+
