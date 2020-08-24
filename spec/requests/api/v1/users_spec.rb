@@ -5,7 +5,12 @@ RSpec.describe 'Users API', type: :request do
     let!(:user) { create(:user) }
     let(:user_id) { user.id }
     let(:headers) do
-        {'Accept'=>'application/vnd.taskmanager.v1', 'Content-Type'=> Mime[:json].to_s}
+        {
+        'Accept'=>'application/vnd.taskmanager.v1', 
+        'Content-Type'=> Mime[:json].to_s,
+        # a partir do momento que se restringe alterações pelo current_user, deve-se incluir essa chave no cabeçalho da requisição:
+        'Authorization'=> user.auth_token 
+        }
     end
 
     describe 'GET /users/:id' do
@@ -98,7 +103,7 @@ RSpec.describe 'Users API', type: :request do
 
     describe 'DELETE /users/:id' do
         before do
-            delete "/users/#{user_id}", params:{}, headers: headers
+            delete "/users/#{user_id}", headers: headers, params:{}
         end
 
         it 'returns status code 204' do

@@ -1,0 +1,73 @@
+****************************
+****************************
+-----------xxx-----------------
+----------------*****************------------------
+
+Randomized with seed 49384
+
+Sessions API
+  POST /sessions
+    when the credentials are correct
+      returns status code 200
+      returns the json data for the users with auth token
+    when the credentials are incorrect
+      returns the json data for the errors
+      returns status code 401
+  DELETE /sessions/:id
+    return status code 204
+    return status code 204
+
+User
+  is expected to validate that :auth_token is case-sensitively unique
+  is expected to allow :email to be ‹"oiram@teste.com"›
+  is expected to validate that :password_confirmation matches :password
+  is expected to validate that :email cannot be empty/falsy
+  is expected to validate that :email is case-insensitively unique
+  #generate_authentication_token!
+    generate a unique token
+    generate another auth_token when the current auth token already has been taken
+  #info
+    returns email, created_at and a Token
+
+Authenticable
+  #current_user
+    return the user from the authorization header
+  #authenticate_with_token!
+    when there is no user logged in
+      returns status code 401
+      return the json data for the errors
+
+ApplicationController
+  includes the correct concerns
+    is expected to include Authenticable
+
+Users API
+  DELETE /users/:id
+    returns status code 204
+    removes the user from database
+  PUT /users/:id
+    when the request params are valid
+      return JSON data with update information
+      returns status code 200
+    when the request params are invalid
+      returns status code 422
+      return JSON data with errors
+  GET /users/:id
+    when the user exists
+      returns the user
+      returns status code 200
+    when the user doesn't exists
+      returns status code 404
+  POST /users
+    when the request params are invalids
+      return JSON data with errors
+      returns status code 422
+    when the request params are valids
+      returns status code 201
+      return JSON data for created user
+
+Finished in 2.33 seconds (files took 0.43438 seconds to load)
+31 examples, 0 failures
+
+Randomized with seed 49384
+
