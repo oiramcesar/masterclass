@@ -6,10 +6,10 @@ RSpec.describe 'Users API', type: :request do
     let(:user_id) { user.id }
     let(:headers) do
         {
-        'Accept'=>'application/vnd.taskmanager.v1', 
-        'Content-Type'=> Mime[:json].to_s,
-        # a partir do momento que se restringe alterações pelo current_user, deve-se incluir essa chave no cabeçalho da requisição:
-        'Authorization'=> user.auth_token 
+            'Content-Type'=> Mime[:json].to_s,
+            'Accept'=>'application/vnd.taskmanager.v1', 
+            # a partir do momento que se restringe alterações pelo current_user, deve-se incluir essa chave no cabeçalho da requisição:
+            'Authorization'=> user.auth_token 
         }
     end
 
