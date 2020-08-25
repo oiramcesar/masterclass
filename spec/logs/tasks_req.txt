@@ -1,0 +1,187 @@
+
+Randomized with seed 13240
+
+Tasks API
+  GET /tasks/:id
+    return status code 200 (FAILED - 1)
+    return the json for task (FAILED - 2)
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+
+Failures:
+
+  1) Tasks API GET /tasks/:id return status code 200
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, parms: {}
+
+     ArgumentError:
+       unknown keyword: parms
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API GET /tasks/:id return the json for task
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, parms: {}
+
+     ArgumentError:
+       unknown keyword: parms
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.45 seconds (files took 0.30037 seconds to load)
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:40 # Tasks API GET /tasks/:id return status code 200
+rspec ./spec/requests/api/v1/tasks_spec.rb:44 # Tasks API GET /tasks/:id return the json for task
+
+Randomized with seed 13240
+
+
+Randomized with seed 7834
+
+Tasks API
+  GET /tasks/:id
+    return status code 200 (FAILED - 1)
+    return the json for task (FAILED - 2)
+  GET /tasks
+    return 5 tasks from database
+    return status code 200
+
+Failures:
+
+  1) Tasks API GET /tasks/:id return status code 200
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, params: {}
+
+     ActionController::RoutingError:
+       No route matches [GET] "/tasks/1"
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API GET /tasks/:id return the json for task
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, params: {}
+
+     ActionController::RoutingError:
+       No route matches [GET] "/tasks/2"
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.45 seconds (files took 0.28012 seconds to load)
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:40 # Tasks API GET /tasks/:id return status code 200
+rspec ./spec/requests/api/v1/tasks_spec.rb:44 # Tasks API GET /tasks/:id return the json for task
+
+Randomized with seed 7834
+
+
+Randomized with seed 42419
+
+Tasks API
+  GET /tasks/:id
+    return status code 200 (FAILED - 1)
+    return the json for task (FAILED - 2)
+  GET /tasks
+    return 5 tasks from database
+    return status code 200
+
+Failures:
+
+  1) Tasks API GET /tasks/:id return status code 200
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, params: {}
+
+     AbstractController::ActionNotFound:
+       The action 'show' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API GET /tasks/:id return the json for task
+     Failure/Error: get "/tasks/#{task.id}", headers: headers, params: {}
+
+     AbstractController::ActionNotFound:
+       The action 'show' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:37:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.79 seconds (files took 0.28763 seconds to load)
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:40 # Tasks API GET /tasks/:id return status code 200
+rspec ./spec/requests/api/v1/tasks_spec.rb:44 # Tasks API GET /tasks/:id return the json for task
+
+Randomized with seed 42419
+
+
+Randomized with seed 27082
+
+Tasks API
+  GET /tasks/:id
+    return status code 200 (FAILED - 1)
+    return the json for task (FAILED - 2)
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+
+Failures:
+
+  1) Tasks API GET /tasks/:id return status code 200
+     Failure/Error: expect(response).to have_http_status(200)
+       expected the response to have status code 200 but it was 204
+     # ./spec/requests/api/v1/tasks_spec.rb:41:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API GET /tasks/:id return the json for task
+     Failure/Error: @json_body ||= JSON.parse(response.body, symbolize_names: true)
+
+     JSON::ParserError:
+       765: unexpected token at ''
+     # ./spec/support/request_spec_helper.rb:3:in `json_body'
+     # ./spec/requests/api/v1/tasks_spec.rb:45:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.13 seconds (files took 0.28149 seconds to load)
+4 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:40 # Tasks API GET /tasks/:id return status code 200
+rspec ./spec/requests/api/v1/tasks_spec.rb:44 # Tasks API GET /tasks/:id return the json for task
+
+Randomized with seed 27082
+
+
+Randomized with seed 38774
+
+Tasks API
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+  GET /tasks
+    return 5 tasks from database
+    return status code 200
+
+Finished in 1.47 seconds (files took 0.33546 seconds to load)
+4 examples, 0 failures
+
+Randomized with seed 38774
+
