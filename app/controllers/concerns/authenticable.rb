@@ -7,7 +7,7 @@ module Authenticable
     end
 
     def authenticate_with_token!
-        render json: {errors: 'Unauthoraized access!'}, status: 401 unless user_logged_in?
+        render json: {errors: 'Unauthorized access!'}, status: 401 unless user_logged_in?
     end
 
     def user_logged_in?
