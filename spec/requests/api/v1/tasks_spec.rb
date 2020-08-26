@@ -46,4 +46,55 @@ RSpec.describe 'Tasks API' do
       end
 
     end
+
+    describe 'POST /tasks' do
+      
+      let(:task_params){ attributes_for(:task) }
+      before do
+        post "/tasks", headers: headers, params: { task: task_params }.to_json
+      end 
+
+
+      context 'when the params are valids' do
+
+        it 'return status code 201' do
+          expect(response).to have_http_status(201)
+        end
+        
+        it 'save the task in the database' do
+          expect(Task.find_by(title: task_params[:title])).not_to be_nil
+        end
+
+        it 'return the json for created task' do
+          expect(json_body[:title]).to eq(task_params[:title])
+        end      
+
+        it 'assigns the created task to the current user' do        
+          expect(json_body[:user_id]).to eq(user.id)
+        end
+
+      end
+
+
+      context 'when the params aren\'t valids' do
+        # como um parâmetro inválido realiza-se a sobrescrição do titulo com valor em branco
+        let(:task_params){ attributes_for(:task, title: ' ') }
+
+        it 'returns status code 422' do
+          expect(response).to have_http_status(422)        
+        end
+
+        it 'doesn\'t save task in the database' do
+          expect(Task.find_by(title: task_params[:title])).to be_nil
+        end
+
+        it 'return json error for title' do
+          expect(json_body[:errors]).to have_key(:title)
+        end
+
+      end
+      
+
+    end
+
 end

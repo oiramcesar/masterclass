@@ -185,3 +185,486 @@ Finished in 1.47 seconds (files took 0.33546 seconds to load)
 
 Randomized with seed 38774
 
+
+Randomized with seed 1394
+
+Tasks API
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  POST /tasks
+    when the params are valids
+      save the task in the database (FAILED - 1)
+      return status code 201 (FAILED - 2)
+      return the json for created task (FAILED - 3)
+      assigns the created task to the current user (FAILED - 4)
+
+Failures:
+
+  1) Tasks API POST /tasks when the params are valids save the task in the database
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionController::RoutingError:
+       No route matches [POST] "/tasks"
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API POST /tasks when the params are valids return status code 201
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionController::RoutingError:
+       No route matches [POST] "/tasks"
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  3) Tasks API POST /tasks when the params are valids return the json for created task
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionController::RoutingError:
+       No route matches [POST] "/tasks"
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  4) Tasks API POST /tasks when the params are valids assigns the created task to the current user
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionController::RoutingError:
+       No route matches [POST] "/tasks"
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 3.84 seconds (files took 3.31 seconds to load)
+8 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:65 # Tasks API POST /tasks when the params are valids save the task in the database
+rspec ./spec/requests/api/v1/tasks_spec.rb:61 # Tasks API POST /tasks when the params are valids return status code 201
+rspec ./spec/requests/api/v1/tasks_spec.rb:69 # Tasks API POST /tasks when the params are valids return the json for created task
+rspec ./spec/requests/api/v1/tasks_spec.rb:73 # Tasks API POST /tasks when the params are valids assigns the created task to the current user
+
+Randomized with seed 1394
+
+
+Randomized with seed 49571
+
+Tasks API
+  POST /tasks
+    when the params are valids
+      return status code 201 (FAILED - 1)
+      assigns the created task to the current user (FAILED - 2)
+      return the json for created task (FAILED - 3)
+      save the task in the database (FAILED - 4)
+  GET /tasks/:id
+    return status code 200
+    return the json for task
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+
+Failures:
+
+  1) Tasks API POST /tasks when the params are valids return status code 201
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     AbstractController::ActionNotFound:
+       The action 'create' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API POST /tasks when the params are valids assigns the created task to the current user
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     AbstractController::ActionNotFound:
+       The action 'create' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  3) Tasks API POST /tasks when the params are valids return the json for created task
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     AbstractController::ActionNotFound:
+       The action 'create' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  4) Tasks API POST /tasks when the params are valids save the task in the database
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     AbstractController::ActionNotFound:
+       The action 'create' could not be found for Api::V1::TasksController
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.59 seconds (files took 0.31567 seconds to load)
+8 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:61 # Tasks API POST /tasks when the params are valids return status code 201
+rspec ./spec/requests/api/v1/tasks_spec.rb:73 # Tasks API POST /tasks when the params are valids assigns the created task to the current user
+rspec ./spec/requests/api/v1/tasks_spec.rb:69 # Tasks API POST /tasks when the params are valids return the json for created task
+rspec ./spec/requests/api/v1/tasks_spec.rb:65 # Tasks API POST /tasks when the params are valids save the task in the database
+
+Randomized with seed 49571
+
+
+Randomized with seed 13977
+
+Tasks API
+  POST /tasks
+    when the params are valids
+      return the json for created task (FAILED - 1)
+      assigns the created task to the current user (FAILED - 2)
+      return status code 201 (FAILED - 3)
+      save the task in the database (FAILED - 4)
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+
+Failures:
+
+  1) Tasks API POST /tasks when the params are valids return the json for created task
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionDispatch::Http::Parameters::ParseError:
+       765: unexpected token at 'title=Eos+alias+adipisci+est.&description=Earum+aut+id.+Maxime+natus+exercitationem.+Repellat+suscipit+voluptate.&deadline=2021-08-24&done=false'
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+     # ------------------
+     # --- Caused by: ---
+     # JSON::ParserError:
+     #   765: unexpected token at 'title=Eos+alias+adipisci+est.&description=Earum+aut+id.+Maxime+natus+exercitationem.+Repellat+suscipit+voluptate.&deadline=2021-08-24&done=false'
+     #   ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+
+  2) Tasks API POST /tasks when the params are valids assigns the created task to the current user
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionDispatch::Http::Parameters::ParseError:
+       765: unexpected token at 'title=Eligendi+soluta+ipsum+autem.&description=Voluptatem+eos+odio.+Saepe+reprehenderit+non.+Labore+quibusdam+qui.&deadline=2021-01-17&done=false'
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+     # ------------------
+     # --- Caused by: ---
+     # JSON::ParserError:
+     #   765: unexpected token at 'title=Eligendi+soluta+ipsum+autem.&description=Voluptatem+eos+odio.+Saepe+reprehenderit+non.+Labore+quibusdam+qui.&deadline=2021-01-17&done=false'
+     #   ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+
+  3) Tasks API POST /tasks when the params are valids return status code 201
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionDispatch::Http::Parameters::ParseError:
+       765: unexpected token at 'title=Qui+ut+enim+impedit.&description=Sapiente+aperiam+qui.+Sit+qui+est.+Sit+et+exercitationem.&deadline=2021-03-14&done=false'
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+     # ------------------
+     # --- Caused by: ---
+     # JSON::ParserError:
+     #   765: unexpected token at 'title=Qui+ut+enim+impedit.&description=Sapiente+aperiam+qui.+Sit+qui+est.+Sit+et+exercitationem.&deadline=2021-03-14&done=false'
+     #   ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+
+  4) Tasks API POST /tasks when the params are valids save the task in the database
+     Failure/Error: post "/tasks", headers: headers, params: task_params
+
+     ActionDispatch::Http::Parameters::ParseError:
+       765: unexpected token at 'title=Et+iste+dolores+et.&description=Deleniti+distinctio+inventore.+Et+sit+sint.+Enim+quia+itaque.&deadline=2021-06-16&done=false'
+     # ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+     # ------------------
+     # --- Caused by: ---
+     # JSON::ParserError:
+     #   765: unexpected token at 'title=Et+iste+dolores+et.&description=Deleniti+distinctio+inventore.+Et+sit+sint.+Enim+quia+itaque.&deadline=2021-06-16&done=false'
+     #   ./spec/requests/api/v1/tasks_spec.rb:55:in `block (3 levels) in <top (required)>'
+
+Finished in 1.59 seconds (files took 0.31661 seconds to load)
+8 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:69 # Tasks API POST /tasks when the params are valids return the json for created task
+rspec ./spec/requests/api/v1/tasks_spec.rb:73 # Tasks API POST /tasks when the params are valids assigns the created task to the current user
+rspec ./spec/requests/api/v1/tasks_spec.rb:61 # Tasks API POST /tasks when the params are valids return status code 201
+rspec ./spec/requests/api/v1/tasks_spec.rb:65 # Tasks API POST /tasks when the params are valids save the task in the database
+
+Randomized with seed 13977
+
+
+Randomized with seed 64475
+
+Tasks API
+  GET /tasks/:id
+    return status code 200
+    return the json for task
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  POST /tasks
+    when the params are valids
+      return status code 201 (FAILED - 1)
+      return the json for created task (FAILED - 2)
+      assigns the created task to the current user (FAILED - 3)
+      save the task in the database (FAILED - 4)
+
+Failures:
+
+  1) Tasks API POST /tasks when the params are valids return status code 201
+     Failure/Error: expect(response).to have_http_status(201)
+       expected the response to have status code 201 but it was 204
+     # ./spec/requests/api/v1/tasks_spec.rb:62:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API POST /tasks when the params are valids return the json for created task
+     Failure/Error: @json_body ||= JSON.parse(response.body, symbolize_names: true)
+
+     JSON::ParserError:
+       765: unexpected token at ''
+     # ./spec/support/request_spec_helper.rb:3:in `json_body'
+     # ./spec/requests/api/v1/tasks_spec.rb:70:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  3) Tasks API POST /tasks when the params are valids assigns the created task to the current user
+     Failure/Error: @json_body ||= JSON.parse(response.body, symbolize_names: true)
+
+     JSON::ParserError:
+       765: unexpected token at ''
+     # ./spec/support/request_spec_helper.rb:3:in `json_body'
+     # ./spec/requests/api/v1/tasks_spec.rb:74:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  4) Tasks API POST /tasks when the params are valids save the task in the database
+     Failure/Error: expect(Task.find_by(title: task_params[:title])).not_t be_nil
+
+     NoMethodError:
+       undefined method `not_t' for #<RSpec::Expectations::ExpectationTarget:0x00005636893e7360>
+       Did you mean?  not_to
+     # ./spec/requests/api/v1/tasks_spec.rb:66:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.67 seconds (files took 0.28818 seconds to load)
+8 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:61 # Tasks API POST /tasks when the params are valids return status code 201
+rspec ./spec/requests/api/v1/tasks_spec.rb:69 # Tasks API POST /tasks when the params are valids return the json for created task
+rspec ./spec/requests/api/v1/tasks_spec.rb:73 # Tasks API POST /tasks when the params are valids assigns the created task to the current user
+rspec ./spec/requests/api/v1/tasks_spec.rb:65 # Tasks API POST /tasks when the params are valids save the task in the database
+
+Randomized with seed 64475
+
+
+Randomized with seed 54118
+
+Tasks API
+  POST /tasks
+    when the params are valids
+      save the task in the database (FAILED - 1)
+      return the json for created task
+      return status code 201
+      assigns the created task to the current user
+  GET /tasks
+    return 5 tasks from database
+    return status code 200
+  GET /tasks/:id
+    return status code 200
+    return the json for task
+
+Failures:
+
+  1) Tasks API POST /tasks when the params are valids save the task in the database
+     Failure/Error: expect(Task.find_by(title: task_params[:title])).not_t be_nil
+
+     NoMethodError:
+       undefined method `not_t' for #<RSpec::Expectations::ExpectationTarget:0x000056368921a168>
+       Did you mean?  not_to
+     # ./spec/requests/api/v1/tasks_spec.rb:66:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.53 seconds (files took 0.24678 seconds to load)
+8 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:65 # Tasks API POST /tasks when the params are valids save the task in the database
+
+Randomized with seed 54118
+
+
+Randomized with seed 53650
+
+Tasks API
+  POST /tasks
+    when the params are valids
+      return status code 201
+      return the json for created task
+      assigns the created task to the current user
+      save the task in the database
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  GET /tasks/:id
+    return status code 200
+    return the json for task
+
+Finished in 1.28 seconds (files took 0.25319 seconds to load)
+8 examples, 0 failures
+
+Randomized with seed 53650
+
+
+Randomized with seed 60008
+
+Tasks API
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+  POST /tasks
+    when the params aren't valids
+      returns status code 422 (FAILED - 1)
+      doesn't save task in the database
+      return json error for title (FAILED - 2)
+    when the params are valids
+      save the task in the database
+      assigns the created task to the current user
+      return the json for created task
+      return status code 201
+
+Failures:
+
+  1) Tasks API POST /tasks when the params aren't valids returns status code 422
+     Failure/Error: expect(response).to have_http_status(422)
+       expected the response to have status code 422 but it was 201
+     # ./spec/requests/api/v1/tasks_spec.rb:84:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API POST /tasks when the params aren't valids return json error for title
+     Failure/Error: expect(json_body[:errors]).to have_key(:title)
+       expected  to respond to `has_key?`
+     # ./spec/requests/api/v1/tasks_spec.rb:92:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 2.14 seconds (files took 0.26094 seconds to load)
+11 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:83 # Tasks API POST /tasks when the params aren't valids returns status code 422
+rspec ./spec/requests/api/v1/tasks_spec.rb:91 # Tasks API POST /tasks when the params aren't valids return json error for title
+
+Randomized with seed 60008
+
+
+Randomized with seed 20799
+
+Tasks API
+  GET /tasks
+    return 5 tasks from database
+    return status code 200
+  POST /tasks
+    when the params aren't valids
+      returns status code 422
+      return json error for title (FAILED - 1)
+      doesn't save task in the database
+    when the params are valids
+      return status code 201
+      save the task in the database
+      assigns the created task to the current user
+      return the json for created task
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+
+Failures:
+
+  1) Tasks API POST /tasks when the params aren't valids return json error for title
+     Failure/Error: expect(json_body[:errors]).to has_key(:title)
+
+     NoMethodError:
+       undefined method `has_key' for #<RSpec::ExampleGroups::TasksAPI::POSTTasks::WhenTheParamsArenTValids:0x00005636893e5358>
+     # ./spec/requests/api/v1/tasks_spec.rb:92:in `block (4 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 1.88 seconds (files took 0.25096 seconds to load)
+11 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:91 # Tasks API POST /tasks when the params aren't valids return json error for title
+
+Randomized with seed 20799
+
+
+Randomized with seed 43450
+
+Tasks API
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+  POST /tasks
+    when the params aren't valids
+      returns status code 422
+      return json error for title
+      doesn't save task in the database
+    when the params are valids
+      assigns the created task to the current user
+      return status code 201
+      save the task in the database
+      return the json for created task
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+
+Finished in 1.72 seconds (files took 0.25103 seconds to load)
+11 examples, 0 failures
+
+Randomized with seed 43450
+
