@@ -1180,3 +1180,108 @@ Finished in 2.72 seconds (files took 0.27703 seconds to load)
 
 Randomized with seed 31661
 
+
+Randomized with seed 42191
+
+Tasks API
+  DELETE /tasks/:id
+    remove task from the database (FAILED - 1)
+    returns status code 204 (FAILED - 2)
+  GET /tasks/:id
+    return status code 200
+    return the json for task
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  POST /tasks
+    when the params are valids
+      assigns the created task to the current user
+      return status code 201
+      save the task in the database
+      return the json for created task
+    when the params aren't valids
+      returns status code 422
+      return json error for title
+      doesn't save task in the database
+  PUT /tasks/:id
+    when the params aren't valids
+      returns the json error title
+      returns status code 422
+      doesn't update the task in the database
+    when the params are valids
+      updates the task in the database
+      returns the json update task
+      returns status code 200
+
+Failures:
+
+  1) Tasks API DELETE /tasks/:id remove task from the database
+     Failure/Error: delete "/tasks/#{tasks.id}", headers:headers, params:{}
+
+     NameError:
+       undefined local variable or method `tasks' for #<RSpec::ExampleGroups::TasksAPI::DELETETasksId:0x0000563683e40948>
+       Did you mean?  task
+     # ./spec/requests/api/v1/tasks_spec.rb:150:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+  2) Tasks API DELETE /tasks/:id returns status code 204
+     Failure/Error: delete "/tasks/#{tasks.id}", headers:headers, params:{}
+
+     NameError:
+       undefined local variable or method `tasks' for #<RSpec::ExampleGroups::TasksAPI::DELETETasksId:0x00005636868762f8>
+       Did you mean?  task
+     # ./spec/requests/api/v1/tasks_spec.rb:150:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:47:in `block (3 levels) in <top (required)>'
+     # ./spec/rails_helper.rb:46:in `block (2 levels) in <top (required)>'
+     # -e:1:in `<main>'
+
+Finished in 2.5 seconds (files took 0.26044 seconds to load)
+19 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/requests/api/v1/tasks_spec.rb:157 # Tasks API DELETE /tasks/:id remove task from the database
+rspec ./spec/requests/api/v1/tasks_spec.rb:153 # Tasks API DELETE /tasks/:id returns status code 204
+
+Randomized with seed 42191
+
+
+Randomized with seed 20741
+
+Tasks API
+  DELETE /tasks/:id
+    remove task from the database
+    returns status code 204
+  PUT /tasks/:id
+    when the params aren't valids
+      doesn't update the task in the database
+      returns the json error title
+      returns status code 422
+    when the params are valids
+      updates the task in the database
+      returns status code 200
+      returns the json update task
+  GET /tasks/:id
+    return the json for task
+    return status code 200
+  GET /tasks
+    return status code 200
+    return 5 tasks from database
+  POST /tasks
+    when the params are valids
+      return status code 201
+      save the task in the database
+      assigns the created task to the current user
+      return the json for created task
+    when the params aren't valids
+      return json error for title
+      returns status code 422
+      doesn't save task in the database
+
+Finished in 2.26 seconds (files took 0.24913 seconds to load)
+19 examples, 0 failures
+
+Randomized with seed 20741
+

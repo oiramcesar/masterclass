@@ -6,10 +6,12 @@ class Api::V1::TasksController < ApplicationController
         render json: {tasks: tasks}, status: 200
     end
 
+
     def show
         task = current_user.tasks.find(params[:id])
         render json: task, status: 200
     end
+
 
     def create
         # task = Task.new(user_id: current_user.id) é o mesmo que:
@@ -22,6 +24,7 @@ class Api::V1::TasksController < ApplicationController
 
     end
 
+
     def update
         task = current_user.tasks.find(params[:id])
         if task.update(task_params)
@@ -29,6 +32,13 @@ class Api::V1::TasksController < ApplicationController
         else
             render json: {errors: task.errors}, status: 422
         end
+    end
+
+
+    def destroy
+        task = current_user.tasks.find(params[:id])
+        task.destroy
+        head 204
     end
 
 

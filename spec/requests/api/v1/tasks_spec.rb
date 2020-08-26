@@ -104,7 +104,7 @@ RSpec.describe 'Tasks API' do
         put "/tasks/#{task.id}", headers: headers, params:{ task: task_params }.to_json
       end
 
-      
+
       context 'when the params are valids' do
         let(:task_params){ { title: 'New title' } }
 
@@ -138,6 +138,24 @@ RSpec.describe 'Tasks API' do
         it 'doesn\'t update the task in the database' do
           expect(Task.find_by(title: task_params[:title])).to be_nil
         end
+      end
+
+    end
+
+    describe 'DELETE /tasks/:id' do
+
+      let!(:task) { create(:task, user_id: user.id)}
+
+      before do
+        delete "/tasks/#{task.id}", headers:headers, params:{}
+      end
+
+      it 'returns status code 204' do
+        expect(response).to have_http_status(204)
+      end
+
+      it 'remove task from the database' do
+        expect { Task.find(task.id) }.to raise_error(ActiveRecord::RecordNotFound)
       end
 
     end
