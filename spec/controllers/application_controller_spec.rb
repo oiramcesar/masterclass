@@ -7,5 +7,3 @@ RSpec.describe ApplicationController, type: :controller do
 end
 
 # Deverá existir na listagem dos controllers uma classe authenticable
-
-puts("****************************")
