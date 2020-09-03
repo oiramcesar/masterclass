@@ -50,3 +50,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+# adiciona um gerador ao framework para serializar uma API:
+# rails g serializer namespace_da_api/model_a_serializar (para que seja serializada a versão específica)
+gem 'active_model_serializers', '~> 0.10.0'

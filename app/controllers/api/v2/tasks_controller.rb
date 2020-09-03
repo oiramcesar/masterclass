@@ -3,11 +3,12 @@ class Api::V2::TasksController < ApplicationController
 
     def index
         tasks = current_user.tasks
-        render json: {tasks: tasks}, status: 200
+        render json: tasks, status: 200
     end
 
 
     def show
+        # por existir serialização a partir de agora essa versão da API irá procurar na pasta do serializer os parametros, no momento da geração do serializer só existe o id.
         task = current_user.tasks.find(params[:id])
         render json: task, status: 200
     end
