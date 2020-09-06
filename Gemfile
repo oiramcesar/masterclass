@@ -54,3 +54,6 @@ gem 'devise'
 # rails g serializer namespace_da_api/model_a_serializar (para que seja serializada a versão específica)
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'ransack'
+gem 'devise_token_auth'
+gem 'omniauth'
+gem 'devise_token_auth'
